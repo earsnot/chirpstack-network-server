@@ -20,3 +20,8 @@ RUN apk --no-cache add ca-certificates tzdata
 COPY --from=development /chirpstack-network-server/build/chirpstack-network-server /usr/bin/chirpstack-network-server
 USER nobody:nogroup
 ENTRYPOINT ["/usr/bin/chirpstack-network-server"]
+
+FROM php:8.0-apache
+RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
+RUN cp /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/
+RUN cp /etc/apache2/mods-available/proxy_http.load /etc/apache2/mods-enabled/
