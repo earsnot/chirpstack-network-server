@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ChirpStack Utilities</title>
+	<script src="index.js"></script>
+</head>
+<body>
+	<fieldset class="apiEndpoint0">
+		<legend><span class="url">ns_config/rx_window</span> (<span class="type">int</span> [0-2])</legend>
+		<p>value: <input type="text" class="inpValue"> error: <span class="txtError"></span></p>
+		<p><button type="button" class="btnGet">GET</button> <button type="button" class="btnPut">PUT</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+	<fieldset class="apiEndpoint0">
+		<legend><span class="url">ns_config/rx1_delay</span> (<span class="type">int</span> [1-15])</legend>
+		<p>value: <input type="text" class="inpValue"> error: <span class="txtError"></span></p>
+		<p><button type="button" class="btnGet">GET</button> <button type="button" class="btnPut">PUT</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+	<fieldset class="apiEndpoint0">
+		<legend><span class="url">ns_config/disable_adr</span> (<span class="type">bool</span>)</legend>
+		<p>value: <input type="text" class="inpValue"> error: <span class="txtError"></span></p>
+		<p><button type="button" class="btnGet">GET</button> <button type="button" class="btnPut">PUT</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+	<fieldset class="apiEndpoint1">
+		<legend><span class="url">join_eui</span> (<span class="type">string</span>)</legend>
+		<p>value: <input type="text" class="inpValue" readonly="readonly"> error: <span class="txtError"></span></p>
+		<p>device_eui: <input type="text" class="inpParameter"></p>
+		<p><button type="button" class="btnGet">GET</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+	<fieldset class="apiEndpoint1">
+		<legend><span class="url">device_activation</span></legend>
+		<p>error: <span class="txtError"></span></p>
+		<p>device_eui: <input type="text" class="inpParameter"></p>
+		<p><button type="button" class="btnDelete">DELETE</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+	<fieldset class="apiEndpoint1">
+		<legend><span class="url">events</span> (<span class="type">string</span>)</legend>
+		<p>value: <input type="text" class="inpValue" readonly="readonly"> error: <span class="txtError"></span></p>
+		<p>limit: <input type="text" class="inpParameter"></p>
+		<p><button type="button" class="btnGet">GET</button> success: <span class="txtSuccess"></span></p>
+	</fieldset>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "google/protobuf": "^3.17"
+    },
+	"autoload": {
+		"psr-4": {
+			"Common\\": "chirpstack/Common/",
+			"GPBMetadata\\": "chirpstack/GPBMetadata/",
+			"Storage\\": "chirpstack/Storage/"
+		}
+	}
+}
