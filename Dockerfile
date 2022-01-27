@@ -14,15 +14,6 @@ WORKDIR $PROJECT_PATH
 RUN make dev-requirements
 RUN make
 
-# FROM alpine:3.15.0 AS production
-# RUN apk --no-cache add ca-certificates tzdata
-# # RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
-# # RUN cp /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/
-# # RUN cp /etc/apache2/mods-available/proxy_http.load /etc/apache2/mods-enabled/
-# COPY --from=development /chirpstack-network-server/build/chirpstack-network-server /usr/bin/chirpstack-network-server
-# USER nobody:nogroup
-# ENTRYPOINT ["/usr/bin/chirpstack-network-server"]
-
 FROM php:8.0-apache as production
 RUN apt-get update && apt-get install -y ca-certificates tzdata sudo
 COPY --from=development /chirpstack-network-server/build/chirpstack-network-server /usr/bin/chirpstack-network-server
@@ -33,9 +24,5 @@ COPY ./php/backend/ /opt/
 COPY ./php/public/ /var/www/util/
 RUN chmod +x /opt/ns_config.php
 RUN chmod +x /usr/local/etc/start.sh
-RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
-RUN cp /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/
-RUN cp /etc/apache2/mods-available/proxy_http.load /etc/apache2/mods-enabled/
-RUN cp /etc/apache2/mods-available/ssl.load /etc/apache2/mods-enabled/
-# USER nobody:nogroup
+RUN a2enmod rewrite
 CMD /usr/local/etc/start.sh

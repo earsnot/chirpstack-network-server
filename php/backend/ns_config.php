@@ -64,7 +64,7 @@ if(isset($argv[2])) {
 	
 	if(!$testing) {
 		exec("kill $(ps aux | grep '[c]hirpstack-network-server' | awk '{print $2}')");
-		exec("/usr/bin/chirpstack-network-server");
+		proc_open("/usr/bin/chirpstack-network-server <&- >&- 2>&- &", [], $pipes);
 	}
 	
 	echo "{$oMatches[0][2]}\n";
