@@ -7,6 +7,8 @@ ChirpStack Network Server is an open-source LoRaWAN network-server, part of
 handling (and de-duplication) of uplink data received by the gateway(s)
 and the scheduling of downlink data transmissions.
 
+## This repository was cloned when the latest version of the Docker image was 3.15.5
+
 ## Architecture
 
 ![architecture](https://www.chirpstack.io/static/img/graphs/architecture.dot.png)
